@@ -8,22 +8,24 @@
 Summary:	Catalyst::Plugin::Session - Generic Catalyst session plugin
 Summary(pl):	Catalyst::Plugin::Session - ogólna wtyczka sesji dla Catalysta
 Name:		perl-Catalyst-Plugin-Session
-Version:	0.05
+Version:	0.12
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	f5b5ed59820e7b7dbf13b364e96fed5d
+# Source0-md5:	2d0560b93df902ce0d27d97701f4e31a
 URL:		http://search.cpan.org/dist/Catalyst-Plugin-Session/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
 BuildRequires:	perl-Catalyst >= 5.49
-BuildRequires:	perl-Test-Deep
-BuildRequires:	perl-Test-MockObject >= 1.01
 BuildRequires:	perl-Object-Signature
+BuildRequires:	perl-Test-Deep
 BuildRequires:	perl-Test-Exception
+BuildRequires:	perl-Test-MockObject >= 1.01
+# Not packaged
+# BuildRequires:	perl-Test-WWW-Mechanize-Catalyst
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -61,24 +63,25 @@ Ta wtyczka ³±czy te dwa elementy w ca³o¶æ.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} Build.PL \
-	destdir=$RPM_BUILD_ROOT \
-	installdirs=vendor
-./Build
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor
+%{__make}
 
-%{?with_tests:./Build test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-./Build install
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{perl_vendorlib}/Catalyst/Plugin/Session/State
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README
+%doc README Changes TODO
 %{perl_vendorlib}/Catalyst/Plugin/*.pm
 %{perl_vendorlib}/Catalyst/Plugin/Session
 %{_mandir}/man3/*
