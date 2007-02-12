@@ -6,7 +6,7 @@
 %define	pdir	Catalyst
 %define	pnam	Plugin-Session
 Summary:	Catalyst::Plugin::Session - Generic Catalyst session plugin
-Summary(pl):	Catalyst::Plugin::Session - ogólna wtyczka sesji dla Catalysta
+Summary(pl.UTF-8):   Catalyst::Plugin::Session - ogÃ³lna wtyczka sesji dla Catalysta
 Name:		perl-Catalyst-Plugin-Session
 Version:	0.12
 Release:	1
@@ -44,20 +44,20 @@ be revived for every request made by the same client.
 
 This plugin links the two pieces together.
 
-%description -l pl
-Wtyczka Session to podstawa dwóch powi±zanych czê¶ci funkcjonalno¶ci
-wymaganej do zarz±dzania sesjami w aplikacjach WWW.
+%description -l pl.UTF-8
+Wtyczka Session to podstawa dwÃ³ch powiÄ…zanych czÄ™Å›ci funkcjonalnoÅ›ci
+wymaganej do zarzÄ…dzania sesjami w aplikacjach WWW.
 
-Pierwsza czê¶æ to obs³uga stanów (State) powoduj±ca, ¿e przegl±darka
-powtarza klucz sesji, dziêki czemu aplikacja WWW mo¿e zidentyfikowaæ
-klienta i logicznie ³±czyæ ze sob± kilka ¿±dañ w sesjê.
+Pierwsza czÄ™Å›Ä‡ to obsÅ‚uga stanÃ³w (State) powodujÄ…ca, Å¼e przeglÄ…darka
+powtarza klucz sesji, dziÄ™ki czemu aplikacja WWW moÅ¼e zidentyfikowaÄ‡
+klienta i logicznie Å‚Ä…czyÄ‡ ze sobÄ… kilka Å¼Ä…daÅ„ w sesjÄ™.
 
-Druga czê¶æ to przechowywanie danych (Store) odpowiadaj±ce za w³a¶ciwe
-przechowywanie informacji o kliencie. Te dane s± przechowywane w taki
-sposób, ¿e mog± byæ odtworzone przy ka¿dym ¿±daniu wykonanym przez
+Druga czÄ™Å›Ä‡ to przechowywanie danych (Store) odpowiadajÄ…ce za wÅ‚aÅ›ciwe
+przechowywanie informacji o kliencie. Te dane sÄ… przechowywane w taki
+sposÃ³b, Å¼e mogÄ… byÄ‡ odtworzone przy kaÅ¼dym Å¼Ä…daniu wykonanym przez
 tego samego klienta.
 
-Ta wtyczka ³±czy te dwa elementy w ca³o¶æ.
+Ta wtyczka Å‚Ä…czy te dwa elementy w caÅ‚oÅ›Ä‡.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
