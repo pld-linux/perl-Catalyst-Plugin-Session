@@ -6,7 +6,7 @@
 %define	pdir	Catalyst
 %define	pnam	Plugin-Session
 Summary:	Catalyst::Plugin::Session - Generic Catalyst session plugin
-Summary(pl.UTF-8):   Catalyst::Plugin::Session - ogólna wtyczka sesji dla Catalysta
+Summary(pl.UTF-8):	Catalyst::Plugin::Session - ogólna wtyczka sesji dla Catalysta
 Name:		perl-Catalyst-Plugin-Session
 Version:	0.12
 Release:	1
