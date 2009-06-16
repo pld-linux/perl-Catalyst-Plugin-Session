@@ -8,24 +8,27 @@
 Summary:	Catalyst::Plugin::Session - Generic Catalyst session plugin
 Summary(pl.UTF-8):	Catalyst::Plugin::Session - ogólna wtyczka sesji dla Catalysta
 Name:		perl-Catalyst-Plugin-Session
-Version:	0.19
+Version:	0.22
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	eb7e9679234cd4f4269b5b1869141082
+# Source0-md5:	67488c4084f95254bbc84d8ecad0a984
 URL:		http://search.cpan.org/dist/Catalyst-Plugin-Session/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
-BuildRequires:	perl-Catalyst >= 5.49
+BuildRequires:	perl-Catalyst >= 5.71001
+BuildRequires:	perl-ExtUtils-MakeMaker >= 6.42
+BuildRequires:	perl-MRO-Compat
+BuildRequires:	perl-Moose >= 0.76
+BuildRequires:	perl-MooseX-Emulate-Class-Accessor-Fast >= 0.00801
 BuildRequires:	perl-Object-Signature
 BuildRequires:	perl-Test-Deep
 BuildRequires:	perl-Test-Exception
 BuildRequires:	perl-Test-MockObject >= 1.01
-# Not packaged
-# BuildRequires:	perl-Test-WWW-Mechanize-Catalyst
+BuildRequires:	perl-namespace-clean >= 0.10
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -81,7 +84,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README Changes TODO
+%doc Changes README
 %{perl_vendorlib}/Catalyst/Plugin/*.pm
 %{perl_vendorlib}/Catalyst/Plugin/Session
 %{_mandir}/man3/*
