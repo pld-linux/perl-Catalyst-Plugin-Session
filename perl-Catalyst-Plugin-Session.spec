@@ -8,12 +8,12 @@
 Summary:	Catalyst::Plugin::Session - Generic Catalyst session plugin
 Summary(pl.UTF-8):	Catalyst::Plugin::Session - ogólna wtyczka sesji dla Catalysta
 Name:		perl-Catalyst-Plugin-Session
-Version:	0.29
+Version:	0.32
 Release:	1
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	b580af6ccd996e4a86f3fbd9dd56b255
+# Source0-md5:	978ee69b592aa7b384e118ae2900e251
 URL:		http://search.cpan.org/dist/Catalyst-Plugin-Session/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
